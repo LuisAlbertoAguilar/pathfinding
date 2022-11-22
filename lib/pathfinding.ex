@@ -26,4 +26,18 @@ defmodule Pathfinding do
       true
     end
   end
+
+  def moves(x, y) do
+    [
+      {x + 1, y},
+      {x - 1, y},
+      {x, y + 1},
+      {x, y - 1}
+    ]
+  end
+
+  def next_moves(x, y) do
+    moves(x, y)
+    |> Enum.filter(fn {newX, newY} -> if block_at(newX, newY), do: {newX, newY} end)
+  end
 end
