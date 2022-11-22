@@ -13,4 +13,17 @@ defmodule Pathfinding do
       ~w[X X X X X X X X X X]
     ]
   end
+
+  def block_at(x, y) do
+    val =
+      ex1()
+      |> Enum.at(x)
+      |> Enum.at(y)
+
+    if val == "X" do
+      false
+    else
+      true
+    end
+  end
 end
