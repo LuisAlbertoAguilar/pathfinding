@@ -7,6 +7,10 @@ defmodule PathfindingTest do
   end
 
   test "next moves" do
-    assert Pathfinding.next_moves(5, 1) == [{7, 4}, {7, 6}]
+    assert Pathfinding.next_moves(5, 1) == [{6, 1}, {4, 1}, {5, 2}]
+  end
+
+  test "find path" do
+    assert Pathfinding.find_path({1, 1}, {5, 2}) == []
   end
 end
